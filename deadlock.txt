@@ -1,0 +1,30 @@
+Found one Java-level deadlock:
+=============================
+"transfer-0":
+  waiting to lock monitor 0x00000214db3bf240 (object 0x0000000715821af0, a edu.itc.se.lab01.task5.Bank$Account),
+  which is held by "transfer-5"
+
+"transfer-5":
+  waiting to lock monitor 0x00000214db3bf580 (object 0x0000000715821b38, a edu.itc.se.lab01.task5.Bank$Account),
+  which is held by "transfer-0"
+
+Java stack information for the threads listed above:
+===================================================
+"transfer-0":
+	at edu.itc.se.lab01.task5.Bank.transfer(Bank.java:38)
+	- waiting to lock <0x0000000715821af0> (a edu.itc.se.lab01.task5.Bank$Account)
+	- locked <0x0000000715821b38> (a edu.itc.se.lab01.task5.Bank$Account)
+	at edu.itc.se.lab01.task5.Bank.lambda$main$0(Bank.java:74)
+	at edu.itc.se.lab01.task5.Bank$$Lambda/0x0000000030040c00.run(Unknown Source)
+	at java.lang.Thread.runWith(java.base@25/Thread.java:1487)
+	at java.lang.Thread.run(java.base@25/Thread.java:1474)
+"transfer-5":
+	at edu.itc.se.lab01.task5.Bank.transfer(Bank.java:38)
+	- waiting to lock <0x0000000715821b38> (a edu.itc.se.lab01.task5.Bank$Account)
+	- locked <0x0000000715821af0> (a edu.itc.se.lab01.task5.Bank$Account)
+	at edu.itc.se.lab01.task5.Bank.lambda$main$0(Bank.java:74)
+	at edu.itc.se.lab01.task5.Bank$$Lambda/0x0000000030040c00.run(Unknown Source)
+	at java.lang.Thread.runWith(java.base@25/Thread.java:1487)
+	at java.lang.Thread.run(java.base@25/Thread.java:1474)
+
+Found 1 deadlock.

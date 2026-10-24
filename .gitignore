@@ -1,0 +1,18 @@
+# Maven build files
+target/
+
+# VS Code
+.vscode/
+
+# Temporary experiment files
+run-output.txt
+run-error.txt
+check-output.txt
+check-error.txt
+test-*-output.txt
+test-*-error.txt
+full-jstack.txt
+BoundedBuffer-backup.txt
+
+# Java compiled files
+*.class
